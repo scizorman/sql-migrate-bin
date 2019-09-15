@@ -3,11 +3,10 @@ services:
 
 branches:
   only:
-    - master
     - "/^v?[0-9\\.]+/"
 
 script:
-  - docker build -t ${TRAVIS_REPO_SLUG}:${TRAVIS_TAG}
+  - docker build -t ${TRAVIS_REPO_SLUG}:${TRAVIS_TAG} .
 
 after_success:
   - docker login -u=${DOCKER_USERNAME} -p=${DOCKER_PASSWORD}
