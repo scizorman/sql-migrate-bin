@@ -1,0 +1,16 @@
+services:
+  docker
+
+branches:
+  only:
+    - master
+    - "/^v?[0-9\\.]+/"
+
+script:
+  - docker build -t ${TRAVIS_REPO_SLUG}:${TRAVIS_TAG}
+
+after_success:
+  - docker login -u=${DOCKER_USERNAME} -p=${DOCKER_PASSWORD}
+  - docker push ${TRAVIS_REPO_SLUG}:${TRAVIS_TAG}
+  - docker tag ${TRAVIS_REPO_SLUG}:${TRAVIS_TAG} ${TRAVIS_REPO_SLUG}:latest
+  - docker push ${TRAVIS_REPO_SLUG}:latest
