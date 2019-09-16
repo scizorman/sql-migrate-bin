@@ -10,12 +10,14 @@ RUN apk add --no-cache \
 
 ENV GO111MODULE=off
 
+RUN go get -u github.com/pwaller/goupx
+
 RUN go get \
   -u \
   -ldflags="-w -s" \
   github.com/rubenv/sql-migrate/...
 
-RUN upx /go/bin/sql-migrate
+RUN goupx /go/bin/sql-migrate
 
 FROM alpine:3
 
