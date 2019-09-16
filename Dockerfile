@@ -21,7 +21,7 @@ RUN goupx /go/bin/sql-migrate
 
 FROM alpine:3
 
-COPY --from=builder /go/bin/sql-migrate /bin/sql-migrate
+COPY --from=builder /go/bin/sql-migrate /usr/local/bin/sql-migrate
 
 ENTRYPOINT [ "sql-migrate" ]
 
