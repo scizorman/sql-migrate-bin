@@ -1,6 +1,6 @@
 # sql-migrate-bin
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/scizorman/sql-migrate-bin)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/scizorman/sql-migrate-bin)](https://hub.docker.com/r/scizorman/sql-migrate-bin)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 
